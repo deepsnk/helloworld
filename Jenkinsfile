@@ -14,7 +14,7 @@ pipeline {
         stage('using env variables') {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
-                sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
+                echo "BUILD_TIMESTAMP = $(env.BUILD_TIMESTAMP}"
             }
         }
         stage('deploy') {
