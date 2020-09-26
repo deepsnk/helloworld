@@ -15,6 +15,8 @@ pipeline {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
+                def commit_id = git rev-parse HEAD
+                echo "COMMIT_ID = $(commit_id)"
             }
         }
         stage('deploy') {
