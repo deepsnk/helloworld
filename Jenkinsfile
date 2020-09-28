@@ -17,7 +17,7 @@ pipeline {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
-                crumb = $ (curl -u "admin: admin" -s 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')    
+                crumb = $ (curl -s 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')    
                 print(crumb)
                // def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                // def output = JsonOutput.toJson([name: 'John', ID: 1])
