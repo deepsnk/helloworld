@@ -19,7 +19,7 @@ pipeline {
                 script {
                 def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                 def output = JsonOutput.toJson([name: 'John', ID: 1])
-                response = httpRequest consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:$output, url: "https://${host}", validResponseCodes: '200'
+                response = httpRequest consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:{$output}, url: "https://${host}", validResponseCodes: '200'
                 println('Status: '+response.status)
                 println('Response: '+response.content)
                 println(output);  
