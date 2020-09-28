@@ -1,3 +1,4 @@
+import groovy.json.JsonOutput
 pipeline {
     agent any
     stages {
@@ -15,7 +16,6 @@ pipeline {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
-                curl -d '{"job":"leader"}' -H "Content-Type : application/json" -X POST http://localhost:8080/job/buildparams
             }
         }
         stage('deploy') {
