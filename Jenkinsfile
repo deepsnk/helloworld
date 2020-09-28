@@ -16,6 +16,8 @@ pipeline {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
+                def output = JsonOutput.toJson([name: 'John', ID: 1])
+                println(output);  
             }
         }
         stage('deploy') {
