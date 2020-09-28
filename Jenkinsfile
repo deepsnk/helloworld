@@ -17,8 +17,9 @@ pipeline {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
+                def host = http://localhost:8080/job/FirstPipeline/job/master/buildApi     
                 def output = JsonOutput.toJson([name: 'John', ID: 1])
-                def response = httpRequest "http://httpbin.org/response-headers?param1=${output}"
+                response = httpRequest consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody: "'{\"displayName\":{\"text\":"smoke test\"},\"description\":{\"text\":\"for smoke testing\"}, \"genusTypeId\":\"type\"'}", url: "https://${host}", validResponseCodes: '200'
                 println('Status: '+response.status)
                 println('Response: '+response.content)
                 println(output);  
