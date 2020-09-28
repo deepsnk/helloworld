@@ -18,7 +18,7 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
-                 def response = httpRequest authentication: 'admin', url: 'http://localhost:8080/crumbIssuer/api/json?pretty=true'
+                 def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json?pretty=true'
                 // HttpGet httpGet = new HttpGet("http://localhost:8080/" + "crumbIssuer/api/json");
                // def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                // def output = JsonOutput.toJson([name: 'John', ID: 1])
