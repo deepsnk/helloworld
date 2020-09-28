@@ -18,7 +18,7 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
                 def output = JsonOutput.toJson([name: 'John', ID: 1])
-                def response = httpRequest "http://httpbin.org/response-headers?param1=${param1}"
+                def response = httpRequest "http://httpbin.org/response-headers?param1=${output}"
                 println('Status: '+response.status)
                 println('Response: '+response.content)
                 println(output);  
