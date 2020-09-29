@@ -23,6 +23,7 @@ pipeline {
                  println('Status: '+response.status)
                  println('Response: '+response.content)
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
+                  curl -u "admin:45a0571e4b294897a3ed519f1ddc2292" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                   def body = 'test'
@@ -37,10 +38,10 @@ pipeline {
                  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                  httpMode: 'POST', 
                  requestBody: body, consoleLogResponseBody: true,
+                 customHeaders: [['crumb' : slurped.crumb,'crumbRequestField':slurped.crumbRequestField]]
                  url: "http://${host}",
                  validResponseContent: 'ok'
-
-
+               
               // response2 = httpRequest authentication: 'credentialsID',consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:jsonString, url: "http://${host}", validResponseCodes: '200'
                println('Status: '+response2.status)
                // println('Response: '+response1.content)
