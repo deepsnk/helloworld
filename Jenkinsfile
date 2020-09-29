@@ -20,7 +20,6 @@ pipeline {
                 script {
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
-                 def jsonObj = readJSON text: response
                  //def slurped = new JsonSlurper().parseText(response)
                 // print('crumbRequestField: ' +slurped.crumbRequestField)
                 // print('crumb: ' +slurped.crumb)
@@ -30,6 +29,7 @@ pipeline {
               //  response = httpRequest consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:output, url: "http://${host}", validResponseCodes: '200'
                // println('Status: '+response.status)
                 println('Response: '+response.content)
+                def slurped = new JsonSlurper().parseText(response.content)
                 
                 //println(output);  
                 }
