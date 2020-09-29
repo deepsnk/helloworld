@@ -19,7 +19,6 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
-                 def output = JsonOutput.toJson([name: 'John', ID: 1])
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
                  def slurped = new JsonSlurper().parseText(response.content)
