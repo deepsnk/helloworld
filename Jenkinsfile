@@ -19,12 +19,15 @@ pipeline {
                 script {
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
+                 println('Status: '+response.status)
+                 println('Response: '+response.content)
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                   def body = 'test'
                   def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
-                  print(response1)
+                 println('Status: '+response1.status)
+                 println('Response: '+response1.content)
                     
                // def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                //  httpMode: 'POST', 
