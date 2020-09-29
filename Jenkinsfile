@@ -1,5 +1,4 @@
 import groovy.json.JsonOutput
-import groovy.json.JsonSlurper
 pipeline {
     agent any
     stages {
@@ -21,14 +20,10 @@ pipeline {
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
-                 def slurped = new JsonSlurper().parseText(response.content)
-                  print('crumbRequestField: ' +slurped.crumbRequestField)
-                  print('crumb: ' +slurped.crumb)
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
-                def body = 'test'
+                  def body = 'test'
                   def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
-                   def slurped1 = new JsonSlurper().parseText(response1.content)
                     
                // def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                //  httpMode: 'POST', 
