@@ -27,7 +27,7 @@ pipeline {
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                 def body = 'test'
-                  def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/jenkins/api/json?pretty=true'
+                  def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
                    def slurped1 = new JsonSlurper().parseText(response1.content)
                     
                // def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
