@@ -27,11 +27,14 @@ pipeline {
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                 def body = 'test'
-                def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
-                 httpMode: 'POST', 
-                 requestBody: body, consoleLogResponseBody: true,
-                 url: "http://${host}",
-                 validResponseContent: 'ok'
+                  def response1 = httpRequest authentication: 'credentialsID','http://localhost:8080/jenkins/api/json?pretty=true'
+                   def slurped = new JsonSlurper().parseText(response.content)
+                    
+               // def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
+               //  httpMode: 'POST', 
+               //  requestBody: body, consoleLogResponseBody: true,
+               //  url: "http://${host}",
+               //  validResponseContent: 'ok'
 
 
                   //response1 = httpRequest authentication: 'credentialsID',consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:jsonString, url: "http://${host}", validResponseCodes: '200'
