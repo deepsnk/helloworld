@@ -31,6 +31,7 @@ pipeline {
                 println('Response: '+response.content)
                 def slurped = new JsonSlurper().parseText(response.content)
                 print('crumbRequestField: ' +slurped.crumbRequestField)
+                print('crumb: ' +slurped.crumb)
                 
                 //println(output);  
                 }
