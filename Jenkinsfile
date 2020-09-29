@@ -27,7 +27,7 @@ pipeline {
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                 def body = 'test'
-                def response1 = httpRequest authentication: 'credentialsID', acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
+                def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                  httpMode: 'POST', 
                  requestBody: body, consoleLogResponseBody: true,
                  url: "http://${host}",
