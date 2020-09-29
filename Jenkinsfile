@@ -28,7 +28,7 @@ pipeline {
                   def jsonString = '{"name":"katone","age":5}'
                 def body = 'test'
                   def response1 = httpRequest authentication: 'credentialsID','http://localhost:8080/jenkins/api/json?pretty=true'
-                   def slurped = new JsonSlurper().parseText(response.content)
+                   def slurped1 = new JsonSlurper().parseText(response.content)
                     
                // def response1 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                //  httpMode: 'POST', 
