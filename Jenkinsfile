@@ -27,8 +27,8 @@ pipeline {
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def output = JsonOutput.toJson([name: 'John', ID: 1])
                  response1 = httpRequest authentication: 'credentialsID',consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:output, url: "http://${host}", validResponseCodes: '200'
-                 println('Status: '+response1.status)
-                println('Response: '+response1.content)
+               //  println('Status: '+response1.status)
+               // println('Response: '+response1.content)
                // def slurped = new JsonSlurper().parseText(response.content)
                // print('crumbRequestField: ' +slurped.crumbRequestField)
                // print('crumb: ' +slurped.crumb)
