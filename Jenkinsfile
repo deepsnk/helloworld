@@ -38,7 +38,7 @@ pipeline {
                  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                  httpMode: 'POST', 
                  requestBody: body, consoleLogResponseBody: true,
-                 customHeaders: [['crumb' : slurped.crumb,'crumbRequestField':slurped.crumbRequestField]]
+                 customHeaders: [['Jenkins-Crumb':slurped.crumb]],
                  url: "http://${host}",
                  validResponseContent: 'ok'
                
