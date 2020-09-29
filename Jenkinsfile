@@ -18,12 +18,14 @@ pipeline {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 script {
+                curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
+                    
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
                  println('Status: '+response.status)
                  println('Response: '+response.content)
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
-                  //curl -u "admin:45a0571e4b294897a3ed519f1ddc2292" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+                 
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                   def body = 'test'
