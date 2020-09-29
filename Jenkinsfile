@@ -23,7 +23,7 @@ pipeline {
                  println('Status: '+response.status)
                  println('Response: '+response.content)
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
-                  curl -u "admin:45a0571e4b294897a3ed519f1ddc2292" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+                  //curl -u "admin:45a0571e4b294897a3ed519f1ddc2292" 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
                   def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
                   def jsonString = '{"name":"katone","age":5}'
                   def body = 'test'
