@@ -28,6 +28,10 @@ pipeline {
                   def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
                  println('Status: '+response1.status)
                  println('Response: '+response1.content)
+                   
+                def slurped = new JsonSlurper().parseText(response.content)
+                print('crumbRequestField: ' +slurped.crumbRequestField)
+                print('crumb: ' +slurped.crumb)
                     
                  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
                  httpMode: 'POST', 
@@ -39,9 +43,9 @@ pipeline {
               // response2 = httpRequest authentication: 'credentialsID',consoleLogResponseBody: true, contentType: 'APPLICATION_JSON', httpMode: 'POST', requestBody:jsonString, url: "http://${host}", validResponseCodes: '200'
                println('Status: '+response2.status)
                // println('Response: '+response1.content)
-               // def slurped = new JsonSlurper().parseText(response.content)
+                //def slurped = new JsonSlurper().parseText(response.content)
                // print('crumbRequestField: ' +slurped.crumbRequestField)
-               // print('crumb: ' +slurped.crumb)
+                //print('crumb: ' +slurped.crumb)
                 
                 //println(output);  
                 }
