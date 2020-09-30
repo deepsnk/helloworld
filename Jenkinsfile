@@ -42,7 +42,7 @@ pipeline {
                   print(cmd_exec('curl --version'))
                   print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
                     
-                  //print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d ${jsonString}'))
+                  print(cmd_exec("curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}'"))
                   print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
