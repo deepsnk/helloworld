@@ -39,6 +39,7 @@ pipeline {
                // print('crumb: ' +slurped.crumb)
                   print(cmd_exec('echo "Buils starting..."'))
                   print(cmd_exec('curl --version'))
+                  print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
               //   requestBody: body, consoleLogResponseBody: true,
