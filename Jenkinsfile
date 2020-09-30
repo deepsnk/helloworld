@@ -37,7 +37,7 @@ pipeline {
                // def slurped = new JsonSlurper().parseText(response.content)
                // print('crumbRequestField: ' +slurped.crumbRequestField)
                // print('crumb: ' +slurped.crumb)
-                  cmd_exec('echo "Buils starting..."')
+                  print(cmd_exec('echo "Buils starting..."'))
                   cmd_exec('curl --version')
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
