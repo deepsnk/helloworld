@@ -54,6 +54,10 @@ pipeline {
                 //print('crumb: ' +slurped.crumb)
                 
                 //println(output);  
+                    
+                   def cmd_exec(command) {
+                   return bat(returnStdout: true, script: "${command}").trim()
+                    }
                 }
             }
         }
@@ -62,8 +66,5 @@ pipeline {
                echo 'hello Stage 3'
             }
         }
-        def cmd_exec(command) {
-        return bat(returnStdout: true, script: "${command}").trim()
-}
     }
 }
