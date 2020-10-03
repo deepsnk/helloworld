@@ -17,6 +17,8 @@ pipeline {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
+                def gitValue = git rev-parse HEAD
+                println('GIT VALUE' +gitValue)
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
@@ -42,7 +44,7 @@ pipeline {
                   print(cmd_exec('curl --version'))
                   print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
                     
-                  print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}''))
+               //   print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}''))
                   print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
@@ -69,6 +71,7 @@ pipeline {
                echo 'hello Stage 3'
             }
         }
+        
     }
 }
 
