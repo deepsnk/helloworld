@@ -73,6 +73,14 @@ pipeline {
             }
         }
         
+        post {
+         always {
+            echo 'One way or another, I have finished'
+        }
+        success {
+            echo 'I succeeded!'
+        }
+       }
     }
 }
 
