@@ -87,8 +87,10 @@ pipeline {
             def branchName = env.BRANCH_NAME
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
+            echo tag_name
             }
             echo "tag_name = Backend + ${env.BRANCH_NAME}"
+           
         }
         success {
             echo 'I succeeded!'
