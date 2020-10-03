@@ -84,7 +84,7 @@ pipeline {
             echo "BRANCH_NAME =${env.BRANCH_NAME}"
             print(cmd_exec('git rev-parse HEAD'))
             script {
-            def branchName = ${env.BRANCH_NAME}
+            def branchName = env.BRANCH_NAME
             }
             echo "tag_name = Backend + ${env.BRANCH_NAME}"
         }
