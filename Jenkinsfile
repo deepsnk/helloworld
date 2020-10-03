@@ -77,6 +77,11 @@ pipeline {
         post {
          always {
             echo 'One way or another, I have finished'
+            echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
+            echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
+            echo "BUILD_URL = ${env.BUILD_URL}"
+            echo "JOB_NAME = ${env.JOB_NAME}"
+            print(cmd_exec('git rev-parse HEAD'))
         }
         success {
             echo 'I succeeded!'
