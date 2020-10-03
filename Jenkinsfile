@@ -83,7 +83,7 @@ pipeline {
             echo "JOB_NAME = ${env.JOB_NAME}"
             echo "BRANCH_NAME =${env.BRANCH_NAME}"
             print(cmd_exec('git rev-parse HEAD'))
-            echo "tag_name = 'Backend' + ${env.BRANCH_NAME}"
+            echo "tag_name = Backend + ${env.BRANCH_NAME}"
         }
         success {
             echo 'I succeeded!'
