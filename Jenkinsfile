@@ -42,6 +42,7 @@ pipeline {
                   print(cmd_exec('echo "Buils starting..."'))
                   print(cmd_exec('curl --version'))
                   print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
+                  print(cmd_exec('git rev-parse HEAD'))
                     
                //   print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}''))
                   print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
