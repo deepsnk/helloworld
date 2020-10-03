@@ -72,6 +72,7 @@ pipeline {
                echo 'hello Stage 3'
             }
         }
+    }
         
         post {
          always {
@@ -80,7 +81,6 @@ pipeline {
         success {
             echo 'I succeeded!'
         }
-       }
     }
 }
 
