@@ -13,6 +13,9 @@ pipeline {
                echo 'hello Stage 2'
             }
         }
+        node() {
+             testingStuff.print_ghibli_films()
+        }
         stage('using env variables') {
             steps {
                 echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
