@@ -5,7 +5,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-               testingStuff.print_ghibli_films()
                echo 'hello Stage 1'
             }
         }
@@ -23,7 +22,8 @@ pipeline {
                 echo "JOB_NAME = ${env.JOB_NAME}"
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
-                //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
+                //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+                 testingStuff.print_ghibli_films()
                     
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
