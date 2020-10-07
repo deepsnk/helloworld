@@ -70,7 +70,6 @@ pipeline {
                 //println(output);  
                  print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d $json')
                  
-                }
             }
         }
         stage('deploy') {
