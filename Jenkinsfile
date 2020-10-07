@@ -23,8 +23,7 @@ pipeline {
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
-                 testingStuff.print_ghibli_films()
-                    
+                // testingStuff.print_ghibli_films()
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
                  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
                  println('Status: '+response.status)
@@ -32,23 +31,23 @@ pipeline {
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
                  
                 //  def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
-                   def jsonString = '{"name":"katone","job":"laddura}'
+                 def jsonString = '{"name":"katone","job":"laddura}'
                     
-                //  def body = 'test'
-                //  def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
-                // println('Status: '+response1.status)
-                // println('Response: '+response1.content)
+                 def body = 'test'
+                 def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
+                 println('Status: '+response1.status)
+                 println('Response: '+response1.content)
                    
                // def slurped = new JsonSlurper().parseText(response.content)
                // print('crumbRequestField: ' +slurped.crumbRequestField)
                // print('crumb: ' +slurped.crumb)
-                  print(cmd_exec('echo "Buils starting..."'))
-                  print(cmd_exec('curl --version'))
-                  print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
-                  print(cmd_exec('git rev-parse HEAD'))
+               //   print(cmd_exec('echo "Buils starting..."'))
+               //   print(cmd_exec('curl --version'))
+               //   print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
+               //   print(cmd_exec('git rev-parse HEAD'))
                     
                //   print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}''))
-                  print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
+              //    print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
               //   requestBody: body, consoleLogResponseBody: true,
