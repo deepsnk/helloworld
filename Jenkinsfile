@@ -67,7 +67,7 @@ pipeline {
                 //print('crumb: ' +slurped.crumb)
                  def json = "{\"buildNumber\": 151, \"tagName\": \"ASD2\"}"
                 //println(output);  
-                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d '{$json}'')
+                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d '${json}'')
             }
         }
       }
