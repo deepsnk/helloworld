@@ -70,12 +70,13 @@ pipeline {
                  print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d $json'))
             }
         }
+      }
         stage('deploy') {
             steps {
                echo 'hello Stage 3'
             }
         }
-    }
+      }
         
         post {
          always {
@@ -103,4 +104,4 @@ pipeline {
 
   def cmd_exec(command) {
               return bat(returnStdout: true, script: "${command}").trim()
-            }
+   }
