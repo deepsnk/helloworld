@@ -37,6 +37,10 @@ pipeline {
                  def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
                  println('Status: '+response1.status)
                  println('Response: '+response1.content)
+                    
+                 def response2 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8187/testrun?page=1&size=20'
+                 println('Status: '+response1.status)
+                 println('Response: '+response1.content)
                    
                // def slurped = new JsonSlurper().parseText(response.content)
                // print('crumbRequestField: ' +slurped.crumbRequestField)
