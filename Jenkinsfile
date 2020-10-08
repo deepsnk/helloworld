@@ -69,7 +69,8 @@ pipeline {
                     
                  def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
-                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d {"buildNumber":1241,"tagName":"naisddkas"}'))
+                    "{\"rollNumber\":21 , \"firstName\":\"Saurabh\" , \"lastName\":\"Gupta\"}"
+                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{\"buildNumber\":21 , \"tagName\":\"Saurabh\"}"'))
             }
         }
       }
