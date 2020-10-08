@@ -25,18 +25,18 @@ pipeline {
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
                 // testingStuff.print_ghibli_films()
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
-                 def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
-                 println('Status: '+response.status)
-                 println('Response: '+response.content)
+               //  def response = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/crumbIssuer/api/json'
+               //  println('Status: '+response.status)
+                // println('Response: '+response.content)
                  //curl -X POST -H "Content-Type: application/json" "authentication: 'credentialsID' -d '@output' https://example/contact
                  
                 //  def host ="localhost:8080/job/FirstPipeline/job/master/buildApi"   
-                 def jsonString = '{"name":"katone","job":"laddura}'
+                // def jsonString = '{"name":"katone","job":"laddura}'
                     
-                 def body = 'test'
-                 def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
-                 println('Status: '+response1.status)
-                 println('Response: '+response1.content)
+                // def body = 'test'
+                // def response1 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8080/job/FirstPipeline/job/master/61/api/json'
+                // println('Status: '+response1.status)
+                // println('Response: '+response1.content)
                     
                  //def response2 = httpRequest authentication: 'credentialsID', url: 'http://localhost:8187/testrun?page=1&size=20'
                  //println('Status: '+response2.status)
@@ -69,7 +69,7 @@ pipeline {
                     
                  def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
-                    "{\"rollNumber\":21 , \"firstName\":\"Saurabh\" , \"lastName\":\"Gupta\"}"
+                //    "{\"rollNumber\":21 , \"firstName\":\"Saurabh\" , \"lastName\":\"Gupta\"}"
                  print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":21,\\"tagName\\":\\"Saurabh\\"}"'))
                  //print(cmd_exec('curl -u \"Testing:Testing\" -X POST \"https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo\" -H \"accept: application/json\" -H \"Content-Type: application/json\" -d \"{ \"buildNumber\":21, \"tagName\": \"Saurabh\"}\"'))
                 }
