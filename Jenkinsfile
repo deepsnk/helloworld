@@ -50,7 +50,7 @@ pipeline {
                //   print(cmd_exec('curl -u "Testing:Testing" https://dailinkx-dev.in-technology.de/backend/dashboard/testcars'))
                //   print(cmd_exec('git rev-parse HEAD'))
                     
-               //   print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d '${jsonString}''))
+               //   print(cmd_exec('curl -X POST -H "Accept:application/json" https://reqres.in/api/users -d "${jsonString}"'))
               //    print(cmd_exec('curl https://reqres.in/api/users -d "name=morpheus1234&job=leader"'))
                //  def response2 = httpRequest acceptType: 'APPLICATION_JSON', contentType: 'APPLICATION_JSON',
               //   httpMode: 'POST', 
@@ -69,7 +69,7 @@ pipeline {
                     
                  def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
-                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d '${payload}'')
+                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "${payload}"')
             }
         }
       }
