@@ -66,8 +66,10 @@ pipeline {
                // print('crumbRequestField: ' +slurped.crumbRequestField)
                 //print('crumb: ' +slurped.crumb)
                  def json = "{\"buildNumber\": 151, \"tagName\": \"ASD2\"}"
+                    
+                 def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
-                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d '${json}'')
+                 print(cmd_exec('curl -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d '${payload}'')
             }
         }
       }
