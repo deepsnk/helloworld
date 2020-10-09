@@ -90,13 +90,14 @@ pipeline {
             echo "BUILD_URL = ${env.BUILD_URL}"
             echo "JOB_NAME = ${env.JOB_NAME}"
             echo "BRANCH_NAME =${env.BRANCH_NAME}"
+            echo "TAG_NAME = ${env.BRANCH_NAME}"
             print(cmd_exec('git rev-parse HEAD'))
             script {
             def branchName = env.BRANCH_NAME
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
             echo tag_name
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"${JOB_NAME}\\"}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"${TAG_NAME}\\"}"'))
             }
             echo "tag_name = Backend + ${env.BRANCH_NAME}"
            
