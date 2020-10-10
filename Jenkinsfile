@@ -92,6 +92,7 @@ pipeline {
             echo "BRANCH_NAME =${env.BRANCH_NAME}"
             echo "TAG_NAME = ${env.BRANCH_NAME}"
             print(cmd_exec('git rev-parse HEAD'))
+            print(cmd_exec('grep version pom.xml'))
             script {
             def branchName = env.BRANCH_NAME
             def currentTag = 'Backend';
