@@ -20,9 +20,10 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 echo "BUILD_URL = ${env.BUILD_URL}"
                 echo "JOB_NAME = ${env.JOB_NAME}"
-                def tagName = "Backend"
+              
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
+                def tagName = "Backend"
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
                 // testingStuff.print_ghibli_films()
                 //curl -v -X GET http://localhost:8080/crumbIssuer/api/json
