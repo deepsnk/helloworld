@@ -20,7 +20,7 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 echo "BUILD_URL = ${env.BUILD_URL}"
                 echo "JOB_NAME = ${env.JOB_NAME}"
-                tagName = "Backend"
+                def tagName = "Backend"
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
