@@ -20,6 +20,7 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 echo "BUILD_URL = ${env.BUILD_URL}"
                 echo "JOB_NAME = ${env.JOB_NAME}"
+                tagName = "Backend"
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
@@ -70,7 +71,7 @@ pipeline {
                  def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
                 //    "{\"rollNumber\":21 , \"firstName\":\"Saurabh\" , \"lastName\":\"Gupta\"}"
-                 print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":21,\\"tagName\\":\\"Saurabh\\"}"'))
+               //  print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":21,\\"tagName\\":\\"Saurabh\\"}"'))
                  //print(cmd_exec('curl -u \"Testing:Testing\" -X POST \"https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo\" -H \"accept: application/json\" -H \"Content-Type: application/json\" -d \"{ \"buildNumber\":21, \"tagName\": \"Saurabh\"}\"'))
                 }
         }
