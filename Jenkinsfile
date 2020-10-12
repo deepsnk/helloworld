@@ -100,7 +100,9 @@ pipeline {
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
             echo tag_name
+             
             some_var = 'Hello World' // this is Groovy
+            "echo $some_var"
             print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"$some_var\\"}"'))
             }
             echo "tag_name = Backend + ${env.BRANCH_NAME}"
