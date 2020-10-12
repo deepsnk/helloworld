@@ -100,7 +100,7 @@ pipeline {
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
             echo tag_name
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":"${tag_name}"}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\"'${tag_name}'\"}"'))
             }
             echo "tag_name = Backend + ${env.BRANCH_NAME}"
            
