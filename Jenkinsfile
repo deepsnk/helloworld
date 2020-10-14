@@ -69,6 +69,7 @@ pipeline {
                 //print('crumb: ' +slurped.crumb)
                  def json = "{\"buildNumber\": 151, \"tagName\": \"ASD2\"}"
                     
+                    
                  def payload = JsonOutput.toJson(["buildNumber": 151, "tagName": "asasd"])
                 //println(output);  
                 //    "{\"rollNumber\":21 , \"firstName\":\"Saurabh\" , \"lastName\":\"Gupta\"}"
@@ -100,7 +101,7 @@ pipeline {
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
             echo tag_name
-             
+            readMavenPom file: 'pom.xml'
             some_var = 'Hello World' // this is Groovy
             "echo $some_var"
             print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"$BUILD_URL\\"}"'))
