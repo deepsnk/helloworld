@@ -23,6 +23,12 @@ pipeline {
               
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
+                   pom = readMavenPom file: 'pom.xml'
+                   env.POM_VERSION = pom.version
+
+                  sh '''#!/bin/bash -xe
+                      echo $POM_VERSION
+                    '''.stripIndent()
                 def tagName = "Backend"
                 //curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
                 // testingStuff.print_ghibli_films()
