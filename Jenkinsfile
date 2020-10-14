@@ -101,13 +101,11 @@ pipeline {
             def currentTag = 'Backend';
             def tag_name = branchName + currentTag
             echo tag_name
-            readMavenPom file: 'pom.xml'
-            some_var = 'Hello World' // this is Groovy
-            "echo $some_var"
+            pom = readMavenPom file: 'pom.xml'
+            echo pom.version
             print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"$BUILD_URL\\"}"'))
             }
-            echo "tag_name = Backend + ${env.BRANCH_NAME}"
-           
+     
         }
         success {
             echo 'I succeeded!'
