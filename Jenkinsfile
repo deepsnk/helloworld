@@ -109,9 +109,8 @@ pipeline {
             echo tag_name
             pom = readMavenPom file: 'pom.xml'
             echo pom.version
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/testrun/buildInfo -H "Content-Type: application/json" -d "{ \\"buildNumber\\":${BUILD_NUMBER},\\"tagName\\":\\"$BUILD_URL\\"}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo -H "Content-Type: application/json" -d "{ \\"buildUrl\\":${BUILD_URL},\\"jobName\\":\\"$JOB_NAME\\",\\"dockerTag\\":\\"Backend\\",\\"commitId\\":\\"abc\\",\\"buildTimeStamp\\":BUILD_TIMESTAMP}"'))
             }
-     
         }
         success {
             echo 'I succeeded!'
