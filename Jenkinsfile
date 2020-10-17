@@ -109,7 +109,7 @@ pipeline {
             echo tag_name
             pom = readMavenPom file: 'pom.xml'
             echo pom.version
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo -H "Content-Type: application/json" -d "{ \\"buildUrl\\":${BUILD_URL},\\"jobName\\":\\"$JOB_NAME\\",\\"dockerTag\\":\\"Backend\\",\\"commitId\\":cmd_exec("git rev-parse HEAD"),\\"buildTimeStamp\\":${BUILD_TIMESTAMP}}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo -H "Content-Type: application/json" -d "{ \\"buildUrl\\":${BUILD_URL},\\"jobName\\":\\"$JOB_NAME\\",\\"dockerTag\\":\\"Backend\\",\\"commitId\\":\\"Backend\\",\\"buildTimeStamp\\":${BUILD_TIMESTAMP}}"'))
             }
         }
         success {
