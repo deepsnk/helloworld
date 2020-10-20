@@ -114,7 +114,7 @@ pipeline {
             echo tag_name
             pom = readMavenPom file: 'pom.xml'
             echo pom.version
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST "https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"buildTimeStamp\": \"2020-10-19T14:59:43.662Z\", \"buildUrl\": \"https://daisensx-dev.daimler.com/alm/jenkins/job/dAIsensX/job/backend/job/feature%252FNVHS-885_dAIlinkX_Show_release_version_data_collection/14/\", \"commitId\": ${COMMIT_ID}, \"dockerTag\": \"dockerTag1\", \"jobName\": \"buildUrl-develop\"}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST "https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"buildTimeStamp\": ${BUILD_TIMESTAMP}, \"buildUrl\": ${BUILD_URL}, \"commitId\": ${COMMIT_ID}, \"dockerTag\": \"dockerTag1\", \"jobName\": ${JOB_NAME}}"'))
             }
         }
         success {
