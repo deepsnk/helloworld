@@ -2,6 +2,9 @@ import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 pipeline {
     agent any
+    environment {
+        COMMIT_ID  = cmd_exec('git rev-parse HEAD')
+         }
     stages {
         stage('build') {
             steps {
@@ -20,6 +23,8 @@ pipeline {
                 echo "BUILD_TIMESTAMP = ${env.BUILD_TIMESTAMP}"
                 echo "BUILD_URL = ${env.BUILD_URL}"
                 echo "JOB_NAME = ${env.JOB_NAME}"
+                
+              
               
                // curl 'http://localhost:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'  
                 script {
