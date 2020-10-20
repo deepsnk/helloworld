@@ -115,7 +115,7 @@ pipeline {
             echo tag_name
             pom = readMavenPom file: 'pom.xml'
             echo pom.version
-            print(cmd_exec('curl -k -u "Testing:Testing" -X POST "https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \\"buildTimeStamp\\": \\"2020-10-19T14:59:43.662Z\\", \\"buildUrl\\": \\"${BUILD_URL}\\", \\"commitId\\": \\"${COMMIT_ID}\\", \\"dockerTag\\": \\"${DOCKER_TAG}\\", \\"jobName\\": \\"${JOB_NAME}\\"}"'))
+            print(cmd_exec('curl -k -u "Testing:Testing" -X POST "https://dailinkx-dev.in-technology.de/nvhs-885/backend/build-information/buildInfo" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \\"buildTimeStamp\\": \\"2020-10-20 05:38:01 UTC\\", \\"buildUrl\\": \\"${BUILD_URL}\\", \\"commitId\\": \\"${COMMIT_ID}\\", \\"dockerTag\\": \\"${DOCKER_TAG}\\", \\"jobName\\": \\"${JOB_NAME}\\"}"'))
 
             }
         }
